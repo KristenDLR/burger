@@ -1,4 +1,5 @@
 var express = require("express");
+var methodOverride = require('method-override')
 
 var PORT = process.env.PORT || 8080;
 
@@ -11,6 +12,8 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//method-override for bootstap form to work
+app.use(methodOverride('X-HTTP-Method-Override'))
 // Set Handlebars.
 var exphbs = require("express-handlebars");
 

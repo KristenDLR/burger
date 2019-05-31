@@ -20,19 +20,12 @@
   {{/each}}
 </ul>
 
-<h2>Add a Burger</h2>
-<form class="create-form">
-
+<form>
   <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
+    <label for="addBurger">What type of Burger do you want?</label>
+    <input type="addBurger" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="What kind of Burger would you like?">
+    <small id="addEat" class="form-text text-muted">Add and Eat</small>
   </div>
 
-  <div class="form-group">
-    <label for="slee">Want to Eat?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div>
-
-  <button type="submit">Add Burger</button>
+  <button type="submit" class="btn btn-primary">ADD BURGER!</button>
 </form>
