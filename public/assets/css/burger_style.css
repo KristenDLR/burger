@@ -1,0 +1,139 @@
+.container{
+  margin: 10px;
+}
+
+body {
+  background-color: #ffccd3;
+}
+
+/* .bun-container > * {
+  position: absolute;
+}
+
+.bun-container > *:after, .bun-container > *:before {
+  content: '';
+}
+
+.bun-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  top: 25px;
+} */
+
+.bun {
+  margin-bottom:5px;
+  margin-left: 20px;
+  width: 135px;
+  height: 55px;
+  top: 92px;
+  left: 50%;
+  background-color: #AB7A49;
+  border-top-left-radius: 70px;
+  border-top-right-radius: 70px;
+}
+.bun:after {
+  width: 100%;
+  height: 20px;
+  top: 140px;
+  background-color: #AB7A49;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+  position: absolute;
+}
+
+.onion {
+  margin-bottom:5px;
+  margin-left: 25px;
+  width: 125px;
+  height: 10px;
+  top: 152px;
+  left: 160px;
+  background-color: #822E81;
+  border-radius: 50px;
+}
+/* .onion:before {
+  margin-bottom:5px;
+  width: 10%;
+  height: 100%;
+  left: 75px;
+  background-color: #FFF;
+  opacity: 0.3;
+  position: absolute;
+} */
+/* .onion:after {
+  margin-bottom:5px;
+  width: 10%;
+  height: 100%;
+  left: 100px;
+  background-color: #FFF;
+  opacity: 0.3;
+  position: absolute;
+} */
+
+.cheese {
+  margin-bottom:5px;
+  margin-left: 22px;
+  width: 130px;
+  height: 15px;
+  top: 165px;
+  left: 155px;
+  background-color: #e6af00;
+  border-radius: 50px;
+}
+
+.tomato {
+  margin-bottom:5px;
+  margin-left: 25px;
+  width: 125px;
+  height: 10px;
+  top: 190px;
+  left: 160px;
+  background-color: #ec3521;
+  border-radius: 50px;
+}
+
+.lettuce {
+  margin-bottom:5px;
+  margin-left: 22px;
+  width: 130px;
+  height: 5px;
+  top: 183px;
+  left: 155px;
+  background-color: #32c704;
+  border-radius: 50px;
+}
+
+.meat {
+  margin-bottom:5px;
+  margin-left: 22px;
+  width: 130px;
+  height: 25px;
+  top: 203px;
+  left: 155px;
+  background-color: #450101;
+  border-radius: 50px;
+}
+
+.bun2 {
+  margin-bottom:5px;
+  margin-left: 20px;
+  width: 135px;
+  height: 25px;
+  top: 92px;
+  left: 150px;
+  background-color: #AB7A49;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+}
+
+.plate {
+  width: 175px;
+  height: 10px;
+  top: 255px;
+  left: 100px;
+  background-color: #99ffc3;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}

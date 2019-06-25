@@ -1,37 +1,54 @@
-<h1>Burgers!</h1>
-<div class="row">
-  <div class="col-md-6">
-    <h2>Burgers to devoure!</h2>
+<div class="container">
+  <h1>Burgers!</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Burgers to devoure!</h2>
 
-    <ul>
-      {{#each burger}}
+      <ul>
+        {{#each burger}}
         {{#unless devoured}}
-          {{> burger/burger-block devoured=true}}
+        {{> burger/burger-block devoured=true}}
         {{/unless}}
-      {{/each}}
-    </ul>
-  </div>
-  <div class="col-md-6" id="beenDevoured">
-    <h2>Burgers that have been devoured</h2>
+        {{/each}}
+      </ul>
+    </div>
+    {{!-burger}}
+    <div class="bun-container">
+    <div class="col-md-4">
+      <div class="bun"></div>
+      <div class="onion"></div>
+      <div class="cheese"></div>
+      <div class="lettuce"></div>
+      <div class="tomato"></div>
+      <div class="meat"></div>
+      <div class="bun2"></div>
+      <div class="plate"></div>
+    </div>
+    </div>
 
-    <ul>
-  {{#each burger}}
-    {{#if devoured}}
-    <ul>
-     <li> {{burger_name}}</li>
-     </ul>
-    {{/if}}
-  {{/each}}
-    </ul>
+    <div class="col-md-6" id="beenDevoured">
+      <h2>Burgers that have been devoured</h2>
+
+      <ul>
+        {{#each burger}}
+        {{#if devoured}}
+        <ul>
+          <li> {{burger_name}}</li>
+        </ul>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
   </div>
 </div>
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label for="addBurger">What type of Burger do you want?</label>
+      <input type="addBurger" class="form-control" id="burgerNew" aria-describedby="burgerpost" placeholder="What kind of Burger would you like?">
+      <small id="addEat" class="form-text text-muted">Add and Eat</small>
+    </div>
 
-<form>
-  <div class="form-group">
-    <label for="addBurger">What type of Burger do you want?</label>
-    <input type="addBurger" class="form-control" id="burgerNew" aria-describedby="burgerpost" placeholder="What kind of Burger would you like?">
-    <small id="addEat" class="form-text text-muted">Add and Eat</small>
-  </div>
-
-  <button type="submit" class="addBurger btn btn-primary">ADD BURGER!</button>
-</form>
+    <button type="submit" class="addBurger btn btn-primary">ADD BURGER!</button>
+  </form>
+</div>
