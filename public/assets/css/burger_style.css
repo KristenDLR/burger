@@ -3,80 +3,46 @@
 }
 
 body {
-  background-color: #ffccd3;
+  background-color: #ffccd3 !important;
 }
 
-/* .bun-container > * {
-  position: absolute;
+#burger{
+  display:inline-block;
+  margin-top: 130px;
+  margin-left: 65px;
+  display: none;
 }
-
-.bun-container > *:after, .bun-container > *:before {
-  content: '';
-}
-
-.bun-container {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  margin: auto;
-  top: 25px;
-} */
-
 .bun {
-  margin-bottom:5px;
+
+  margin-bottom:3px;
   margin-left: 20px;
-  width: 135px;
-  height: 55px;
-  top: 92px;
-  left: 50%;
+  width: 45px;
+  height: 15px;
+  /* top: 92px; */
+  /* left: 50%; */
   background-color: #AB7A49;
   border-top-left-radius: 70px;
   border-top-right-radius: 70px;
 }
-.bun:after {
-  width: 100%;
-  height: 20px;
-  top: 140px;
-  background-color: #AB7A49;
-  border-bottom-left-radius: 70px;
-  border-bottom-right-radius: 70px;
-  position: absolute;
-}
 
 .onion {
-  margin-bottom:5px;
-  margin-left: 25px;
-  width: 125px;
-  height: 10px;
-  top: 152px;
-  left: 160px;
+
+  margin-bottom:3px;
+  margin-left: 22px;
+  width: 40px;
+  height: 7px;
+  /* top: 152px;
+  left: 160px; */
   background-color: #822E81;
   border-radius: 50px;
 }
-/* .onion:before {
-  margin-bottom:5px;
-  width: 10%;
-  height: 100%;
-  left: 75px;
-  background-color: #FFF;
-  opacity: 0.3;
-  position: absolute;
-} */
-/* .onion:after {
-  margin-bottom:5px;
-  width: 10%;
-  height: 100%;
-  left: 100px;
-  background-color: #FFF;
-  opacity: 0.3;
-  position: absolute;
-} */
+
 
 .cheese {
-  margin-bottom:5px;
+  margin-bottom:3px;
   margin-left: 22px;
-  width: 130px;
-  height: 15px;
+  width: 38px;
+  height: 7px;
   top: 165px;
   left: 155px;
   background-color: #e6af00;
@@ -84,10 +50,10 @@ body {
 }
 
 .tomato {
-  margin-bottom:5px;
-  margin-left: 25px;
-  width: 125px;
-  height: 10px;
+  margin-bottom:3px;
+  margin-left: 22px;
+  width: 38px;
+  height: 7px;
   top: 190px;
   left: 160px;
   background-color: #ec3521;
@@ -95,10 +61,10 @@ body {
 }
 
 .lettuce {
-  margin-bottom:5px;
+  margin-bottom:3px;
   margin-left: 22px;
-  width: 130px;
-  height: 5px;
+  width: 42px;
+  height: 3px;
   top: 183px;
   left: 155px;
   background-color: #32c704;
@@ -106,10 +72,10 @@ body {
 }
 
 .meat {
-  margin-bottom:5px;
+  margin-bottom:3px;
   margin-left: 22px;
-  width: 130px;
-  height: 25px;
+  width: 40px;
+  height: 12px;
   top: 203px;
   left: 155px;
   background-color: #450101;
@@ -117,10 +83,10 @@ body {
 }
 
 .bun2 {
-  margin-bottom:5px;
+  margin-bottom:3px;
   margin-left: 20px;
-  width: 135px;
-  height: 25px;
+  width: 45px;
+  height: 15px;
   top: 92px;
   left: 150px;
   background-color: #AB7A49;
@@ -129,11 +95,129 @@ body {
 }
 
 .plate {
+  margin-top:200px;
   width: 175px;
   height: 10px;
-  top: 255px;
-  left: 100px;
+  bottom: 0;
+  /* top: 255px; */
+  /* left: 100px; */
   background-color: #99ffc3;
   border-bottom-left-radius: 100px;
   border-bottom-right-radius: 100px;
 }
+
+/* #burgersAdded{
+  z-index: 1;
+  position:relative;
+ margin: 20px;
+ border-color:rgb(21, 116, 21);
+} */
+
+#oven{
+  content:"";
+  background-image: url(../img/oven.png);
+  background-repeat: no-repeat;
+  background-size: 300px 325px;
+  background-position: center bottom;
+  z-index: -1;
+  /* opacity: .5; */
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.top{
+  min-height: 325px;
+}
+
+
+/*burger on plate*/
+.twoBun {
+  position: relative;
+  -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 5s infinite;
+  margin-bottom:3px;
+  margin-left: 20px;
+  width: 45px;
+  height: 15px;
+  /* top: 92px; */
+  left: 50%;
+  background-color: #AB7A49;
+  border-top-left-radius: 70px;
+  border-top-right-radius: 70px;
+}
+
+.twoOnion {
+
+  margin-bottom:3px;
+  margin-left: 22px;
+  width: 40px;
+  height: 7px;
+  /* top: 152px;
+  left: 160px; */
+  background-color: #822E81;
+  border-radius: 50px;
+}
+
+
+.twoCheese {
+  margin-bottom:3px;
+  margin-left: 22px;
+  width: 38px;
+  height: 7px;
+  top: 165px;
+  left: 155px;
+  background-color: #e6af00;
+  border-radius: 50px;
+}
+
+.twoTomato {
+  margin-bottom:3px;
+  margin-left: 22px;
+  width: 38px;
+  height: 7px;
+  top: 190px;
+  left: 160px;
+  background-color: #ec3521;
+  border-radius: 50px;
+}
+
+.twoLettuce {
+  margin-bottom:3px;
+  margin-left: 22px;
+  width: 42px;
+  height: 3px;
+  top: 183px;
+  left: 155px;
+  background-color: #32c704;
+  border-radius: 50px;
+}
+
+.twoMeat {
+  margin-bottom:3px;
+  margin-left: 22px;
+  width: 40px;
+  height: 12px;
+  top: 203px;
+  left: 155px;
+  background-color: #450101;
+  border-radius: 50px;
+}
+
+.twoBun2 {
+  margin-bottom:3px;
+  margin-left: 20px;
+  width: 45px;
+  height: 15px;
+  top: 92px;
+  left: 150px;
+  background-color: #AB7A49;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+}
+
+@keyframes mymove {
+  from {top: 0px;}
+  to {top: 300px;}

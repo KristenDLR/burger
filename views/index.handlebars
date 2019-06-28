@@ -1,9 +1,69 @@
 <div class="container">
-  <h1>Burgers!</h1>
-  <div class="row">
-    <div class="col-md-4">
-      <h2>Burgers to devoure!</h2>
 
+  {{!Top headings}}
+  <div class="row">
+    <h1>Yum Yum Burgers!</h1>
+  </div>
+
+  {{!Add Burger form}}
+  <div class="row top">
+    <div class="col-md-4">
+      <form>
+        <div class="form-group">
+          <label for="addBurger">What type of Burger do you want?</label>
+          <input type="addBurger" class="form-control" id="burgerNew" aria-describedby="burgerpost" placeholder="What kind of Burger would you like?">
+          <small id="addEat" class="form-text text-muted">Add and Eat</small>
+        </div>
+
+        <button type="submit" class="addBurger btn btn-primary">ADD BURGER!</button>
+      </form>
+    </div>
+    {{!oven}}
+    <div class="col-md-4">
+      <div id="oven">
+        <div id="burger">
+          <div class="bun"></div>
+          <div class="onion"></div>
+          <div class="cheese"></div>
+          <div class="lettuce"></div>
+          <div class="tomato"></div>
+          <div class="meat"></div>
+          <div class="bun2"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4" id="plate">
+      <div id="2burger">
+          <div class="twoBun"></div>
+          <div class="twoOnion"></div>
+          <div class="twoCheese"></div>
+          <div class="twoLettuce"></div>
+          <div class="twoTomato"></div>
+          <div class="TwoMeat"></div>
+          <div class="TwoBun2"></div>
+      </div>
+          <div class="plate"></div>
+      <br>
+    </div>
+  </div>
+</div>
+
+{{!-- <div class="row">
+  <div class="col-md-4">
+    <h2>Burgers to devoure!</h2>
+  </div>
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <h2>Burgers that have been devoured</h2>
+  </div>
+</div> --}}
+
+
+<div class="row">
+
+  <div class="col-md-6">
+     <h2>Burgers to devoure!</h2>
+    <div id="burgersAdded">
       <ul>
         {{#each burger}}
         {{#unless devoured}}
@@ -12,20 +72,21 @@
         {{/each}}
       </ul>
     </div>
-    {{!-burger}}
-    <div class="bun-container">
-    <div class="col-md-4">
-      <div class="bun"></div>
-      <div class="onion"></div>
-      <div class="cheese"></div>
-      <div class="lettuce"></div>
-      <div class="tomato"></div>
-      <div class="meat"></div>
-      <div class="bun2"></div>
-      <div class="plate"></div>
-    </div>
-    </div>
+  </div>
 
+  {{!-burger}}
+
+  {{!-- <div class="col-md-4" id="burger">
+    <div class="bun"></div>
+    <div class="onion"></div>
+    <div class="cheese"></div>
+    <div class="lettuce"></div>
+    <div class="tomato"></div>
+    <div class="meat"></div>
+    <div class="bun2"></div>
+  </div> --}}
+
+  <div class="row">
     <div class="col-md-6" id="beenDevoured">
       <h2>Burgers that have been devoured</h2>
 
@@ -40,15 +101,16 @@
       </ul>
     </div>
   </div>
-</div>
-<div class="container">
-  <form>
-    <div class="form-group">
-      <label for="addBurger">What type of Burger do you want?</label>
-      <input type="addBurger" class="form-control" id="burgerNew" aria-describedby="burgerpost" placeholder="What kind of Burger would you like?">
-      <small id="addEat" class="form-text text-muted">Add and Eat</small>
-    </div>
 
-    <button type="submit" class="addBurger btn btn-primary">ADD BURGER!</button>
-  </form>
-</div>
+
+  {{!-- <div class="container">
+    <form>
+      <div class="form-group">
+        <label for="addBurger">What type of Burger do you want?</label>
+        <input type="addBurger" class="form-control" id="burgerNew" aria-describedby="burgerpost" placeholder="What kind of Burger would you like?">
+        <small id="addEat" class="form-text text-muted">Add and Eat</small>
+      </div>
+
+      <button type="submit" class="addBurger btn btn-primary">ADD BURGER!</button>
+    </form>
+  </div> --}}

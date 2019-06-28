@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-
+  // var oven = document.getElementById("burger");
   $(document).on("click", ".addBurger",function(e){
     e.preventDefault();
 
@@ -14,7 +14,8 @@ $(document).ready(function() {
         console.log("successfully added.");
         location.reload();
 
-      });
+
+      })
 
   });
 
