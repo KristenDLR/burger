@@ -243,8 +243,11 @@ body {
   to {top: 200px;}
 }
 
+/*form*/
+form{
+  margin-top:10px;
+}
 /*title*/
-
 /*Neon*/
 p {
   text-align: center;
@@ -268,10 +271,10 @@ a {
 }
 /*Burger*/
 
-#titleBurger {
-  -ms-transform: rotate(-20deg); /* IE 9 */
-  -webkit-transform: rotate(-20deg); /* Safari prior 9.0 */
-  transform: rotate(-20deg); /* Standard syntax */
+#titleYum{
+  -ms-transform: rotate(-15deg); /* IE 9 */
+  -webkit-transform: rotate(-15deg); /* Safari prior 9.0 */
+  transform: rotate(-15deg); /* Standard syntax */
 }
 
 #titleBurger a:hover {
@@ -285,12 +288,15 @@ a {
 #titleBurger a {
   color: #FF1177;
   font-family: Monoton;
+  font-size: 50px;
   -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
   -moz-animation: neon1 1.5s ease-in-out infinite alternate;
   animation: neon1 1.5s ease-in-out infinite alternate;
-  -ms-transform: rotate(-20deg); /* IE 9 */
-  -webkit-transform: rotate(-20deg); /* Safari prior 9.0 */
-  transform: rotate(-20deg); /* Standard syntax */
+  z-index:2;
+  position: absolute;
+  top:30%;
+  right:0;
+
 }
 
 #titleBurger a:hover {
@@ -302,7 +308,12 @@ a {
 #titleYum a {
   color: #FFDD1B;
   font-family: Pacifico;
-  z-index: -1;
+  z-index: 1;
+  font-size: 80px;
+  position: relative;
+  top: 0;
+  left:0;
+
 }
 
 #titleBurger a:hover {
