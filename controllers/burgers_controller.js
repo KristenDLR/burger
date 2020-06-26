@@ -4,8 +4,14 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
+
+// get route -> index
 router.get("/", function(req, res) {
-  burger.all(function(data) {
+  res.redirect("/burgers");
+});
+
+router.get("/burgers", function(req, res) {
+  burger.selectAll(function(data) {
     var hbsObject = {
       burger: data
     };
@@ -14,19 +20,20 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("/api/burgers", function(req, res) {
-  burger.create(["burger_name"], [req.body.burger_name], function(result) {
+router.post("/burgers/api", function(req, res) {
+  burger.insertOne(["burger_name"], [req.body.burger_name], function(result) {
     // Send back the ID of the new quote
+    console.log(result);
     res.json({ id: result.insertId });
   });
 });
 
-router.put("/api/burgers/:id", function(req, res) {
+router.put("/burgers/api/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   console.log("condition", condition);
 
-  burger.update(
+  burger.updateOne(
     {
       devoured: req.body.devoured
     },
@@ -42,7 +49,7 @@ router.put("/api/burgers/:id", function(req, res) {
   );
 });
 
-router.delete("/api/burgers/:id", function(req, res) {
+router.delete("/burgers/api/:id", function(req, res) {
   let condition = `id = ${req.params.id}`;
 
   burger.deleteOne(condition, function(result) {
