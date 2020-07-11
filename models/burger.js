@@ -7,26 +7,45 @@ var burger = {
       cb(res);
     });
   },
-  insertOne: function(name, cb) {
-    orm.insertOne("burgers", ["burger_name", "devoured"], [name, false], cb);
-  },
-  updateOne: function(id, cb) {
-    var condition = "id=" + id;
-    orm.updateOne(
-      "burgers",
-      {
-        devoured: true
-      },
-      condition,
-      cb
-    );
-  },
-
-  deleteOne: function(condition, callback) {
-    orm.deleteOne("burgers", condition, function(res) {
-      callback(res);
+  //Previous insertOne function
+  // insertOne: function(name, cb) {
+  //   orm.insertOne("burgers", ["burger_name", "devoured"], [name, false], cb);
+  // },
+  insertOne: function(cols,vals,cb){
+    orm.selectAll("burgers",cols,vals,function(res){
+      cb(res);
     });
   }
+//Previous updateOne function
+  // updateOne: function(id, cb) {
+  //   var condition = "id=" + id;
+  //   orm.updateOne(
+  //     "burgers",
+  //     {
+  //       devoured: true
+  //     },
+  //     condition,
+  //     cb
+  //   );
+  // },
+
+  //when running, states updateOne not a function
+updateOne:function(objColVals,condition,cb){
+  orm.selectAll("burgers", objColVals, condition. function(res){
+    cb(res);
+  });
+}
+//Previous deleteOne function
+  // deleteOne: function(condition, callback) {
+  //   orm.deleteOne("burgers", condition, function(res) {
+  //     callback(res);
+  //   });
+  // }
+deleteOne: function(condition,cb){
+  orm.selectAll("burgers", condition, function(res){
+    cb(res);
+  })
+}
 };
 
 // Export the database functions for the controller (catsController.js).
