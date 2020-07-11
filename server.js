@@ -1,5 +1,6 @@
 var express = require("express");
 var methodOverride = require("method-override");
+var bodyParser = require("body-parser");
 
 var PORT = process.env.PORT || 8080;
 
@@ -9,14 +10,14 @@ var app = express();
 app.use(express.static("public"));
 
 // Parse application body
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 //method-override for bootstap form to work
 app.use(methodOverride("X-HTTP-Method-Override"));
 // Set Handlebars.
 var exphbs = require("express-handlebars");
-
+//default layout Main
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 

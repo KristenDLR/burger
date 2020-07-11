@@ -1,6 +1,7 @@
 $(document).ready(function() {
   //ajax GET, for loop to create button
-  $.ajax("/api/burgers", {
+
+  $.ajax("/burgers", {
     type: "GET"
   }).then(function(data) {
     console.log(data);
@@ -9,14 +10,14 @@ $(document).ready(function() {
 
     for (var i = 0; i < len; i++) {
       var text = "Devour";
-      var elem = $("#not_devoured");
-      var klass = "btn-primary devour";
+      var elem = $("#burgersAdded");
+      var eClass = "btn-primary devour";
       var icon = "<i class='fas fa-utensils'></i>";
 
       if (burgers[i].devoured) {
         text = "Delete";
-        elem = $("#devoured");
-        klass = "btn-danger delete";
+        elem = $("#beenDevoured");
+        eClass = "btn-danger delete";
         icon = "<i class='fas fa-trash'></i>";
       }
 
@@ -26,7 +27,7 @@ $(document).ready(function() {
         ". " +
         burgers[i].burger_name +
         "<button type='button' class='btn burger-btn mr-0 vl-auto" +
-        klass +
+        eClass +
         "' data-id='" +
         burgers[i].id +
         "'>" +
@@ -45,7 +46,7 @@ $(document).ready(function() {
     //ajax to onclick mysql url should be from controller
     $.ajax({
       method: "POST",
-      url: "/api/burgers",
+      url: "/burgers",
       data: {
         burger_name: $("#burgerNew")
           .val()
@@ -66,7 +67,7 @@ $(document).ready(function() {
     //ajax to onclick mysql url should be from controller
     $.ajax({
       method: "PUT",
-      url: "/api/burgers/" + id,
+      url: "/burgers/" + id,
       data: { devoured: true }
     }).then(function(dataBurger) {
       $("#burger").push("#beenDevoured");

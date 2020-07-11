@@ -20,7 +20,7 @@ router.get("/burgers", function(req, res) {
   });
 });
 
-router.post("/burgers/api", function(req, res) {
+router.post("/burgers/create", function(req, res) {
   burger.insertOne(["burger_name"], [req.body.burger_name], function(result) {
     // Send back the ID of the new quote
     console.log(result);
@@ -28,7 +28,7 @@ router.post("/burgers/api", function(req, res) {
   });
 });
 
-router.put("/burgers/api/:id", function(req, res) {
+router.put("/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   console.log("condition", condition);
@@ -49,7 +49,7 @@ router.put("/burgers/api/:id", function(req, res) {
   );
 });
 
-router.delete("/burgers/api/:id", function(req, res) {
+router.delete("/burgers/:id", function(req, res) {
   let condition = `id = ${req.params.id}`;
 
   burger.deleteOne(condition, function(result) {
