@@ -43,14 +43,16 @@ $(document).ready(function() {
   $(document).on("click", ".addBurger", function(e) {
     e.preventDefault();
 
+
     //ajax to onclick mysql url should be from controller
     $.ajax({
       method: "POST",
-      url: "/burgers",
+      url: "/api/burgers",
       data: {
         burger_name: $("#burgerNew")
           .val()
           .trim()
+          devoured:0
       }
     }).then(function(dataBurger) {
       console.log("successfully added.");
@@ -63,14 +65,18 @@ $(document).ready(function() {
     console.log("Hello");
     e.preventDefault();
     var id = $(this).data("id");
+    // var devouredState = {
+    //   devoured: 1
+    // }
 
     //ajax to onclick mysql url should be from controller
     $.ajax({
       method: "PUT",
-      url: "/burgers/" + id,
-      data: { devoured: true }
+      url: "/api/burgers/" + id,
+      data: { devoured: 1 }
     }).then(function(dataBurger) {
-      $("#burger").push("#beenDevoured");
+      // //push
+      // $("#burger").push("#beenDevoured");
       console.log("successfully moved.");
       location.reload();
     });
@@ -84,7 +90,7 @@ $(document).ready(function() {
 
     $.ajax({
       method: "DELETE",
-      url: "/burgers/" + burger_id
+      url: "/api/burgers/" + id
     }).then(function(data) {
       console.log("deleted");
       // reload page to display devoured burger in proper column

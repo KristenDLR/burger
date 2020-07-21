@@ -17,21 +17,33 @@
       </div>
 
       <button type="submit" class="addBurger btn btn-primary">ADD BURGER!</button>
-    </form>
+
   </div>
+  </form>
 </div>
+
 
 
 <div class="container data">
   <div class="row">
 
     <div class="col-md-6">
-      <h2>Burgers to devoure!</h2>
-      <div id="burgersAdded">
+      <h2>Burgers to devour!</h2>
+      <div class="panel-body">
         <ul>
           {{#each burger}}
           {{#unless devoured}}
-          {{> burger/burger-block devoured=true}}
+          <span><strong>{{this.id}} - {{this.burger_name}}</strong></span>
+          <button type="button" class="eatburger btn btn-warning" id="eatbutton" data-id="{{this.id}}" data-newDevoured={{devour}}><span
+              class="fa fa-usd"></span></button>
+        </ul>
+      </div>
+
+      <div id="burgersAdded">
+        <ul>
+          {{!-- burger --}}
+
+          {{!-- {{> burger/burger-block devoured=true}} --}}
           {{/unless}}
           {{/each}}
         </ul>
@@ -39,7 +51,7 @@
     </div>
 
 
-    <div class="row">
+    {{!-- <div class="row"> --}}
       <div class="col-md-6" id="beenDevoured">
         <h2>Burgers that have been devoured</h2>
 
@@ -55,3 +67,4 @@
       </div>
     </div>
   </div>
+</div>
