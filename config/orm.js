@@ -1,5 +1,6 @@
 var connection = require("../config/connection.js");
 
+//creating question marks
 function printQuestionMarks(num) {
   var arr = [];
 
@@ -37,8 +38,9 @@ function objToSql(ob) {
 
 // var form = document.getElementById("userForm");
 var orm = {
-  selectAll: function(tableInput, cb) {
-    var queryString = "SELECT * FROM " + tableInput + ";";
+  selectAll: function(table, cb) {
+    //REMOVED TABLEINPUT
+    var queryString = "SELECT * FROM " + table + ";";
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
@@ -85,7 +87,7 @@ var orm = {
   },
   deleteOne: function(table, condition, callback) {
     let query = `DELETE FROM ${table} WHERE ${condition}`;
-    connection.query(query, function(err, result) {
+    connection.query(queryString, function(err, result) {
       if (err) throw err;
       callback(result);
     });

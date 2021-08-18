@@ -2,25 +2,48 @@
 var orm = require("../config/orm.js");
 
 var burger = {
-  all: function(cb) {
-    orm.selectAll("burgers", function(res) {
+  selectAll: function(cb) {
+    orm.selectAll("burger", function(res) {
       cb(res);
     });
   },
-  // The variables cols and vals are arrays.
-  create: function(cols, vals, cb) {
-    orm.insertOne("burgers", cols, vals, function(res) {
+  //Previous insertOne function
+  // insertOne: function(name, cb) {
+  //   orm.insertOne("burgers", ["burger_name", "devoured"], [name, false], cb);
+  // },
+  insertOne: function(cols, value, cb) {
+    orm.selectAll("burger", cols, value, function(res) {
       cb(res);
     });
   },
-  update: function(objColVals, condition, cb) {
-    orm.updateOne("burgers", objColVals, condition, function(res) {
+  //Previous updateOne function
+  // updateOne: function(id, cb) {
+  //   var condition = "id=" + id;
+  //   orm.updateOne(
+  //     "burgers",
+  //     {
+  //       devoured: true
+  //     },
+  //     condition,
+  //     cb
+  //   );
+  // },
+
+  //when running, states updateOne not a function
+  updateOne: function(objColVals, condition, cb) {
+    orm.selectAll("burger", objColVals, condition, function(res) {
       cb(res);
     });
   },
-  deleteOne: function(condition, callback) {
-    orm.deleteOne("burgers", condition, function(res) {
-      callback(res);
+  //Previous deleteOne function
+  // deleteOne: function(condition, callback) {
+  //   orm.deleteOne("burgers", condition, function(res) {
+  //     callback(res);
+  //   });
+  // }
+  deleteOne: function(condition, cb) {
+    orm.selectAll("burger", condition, function(res) {
+      cb(res);
     });
   }
 };

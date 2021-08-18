@@ -1,6 +1,7 @@
 $(document).ready(function() {
   //ajax GET, for loop to create button
-  $.ajax("/api/burgers", {
+
+  $.ajax("/burgers", {
     type: "GET"
   }).then(function(data) {
     console.log(data);
@@ -9,14 +10,14 @@ $(document).ready(function() {
 
     for (var i = 0; i < len; i++) {
       var text = "Devour";
-      var elem = $("#not_devoured");
-      var klass = "btn-primary devour";
+      var elem = $("#burgersAdded");
+      var eClass = "btn-primary devour";
       var icon = "<i class='fas fa-utensils'></i>";
 
       if (burgers[i].devoured) {
         text = "Delete";
-        elem = $("#devoured");
-        klass = "btn-danger delete";
+        elem = $("#beenDevoured");
+        eClass = "btn-danger delete";
         icon = "<i class='fas fa-trash'></i>";
       }
 
@@ -26,7 +27,7 @@ $(document).ready(function() {
         ". " +
         burgers[i].burger_name +
         "<button type='button' class='btn burger-btn mr-0 vl-auto" +
-        klass +
+        eClass +
         "' data-id='" +
         burgers[i].id +
         "'>" +
@@ -42,6 +43,7 @@ $(document).ready(function() {
   $(document).on("click", ".addBurger", function(e) {
     e.preventDefault();
 
+
     //ajax to onclick mysql url should be from controller
     $.ajax({
       method: "POST",
@@ -50,6 +52,7 @@ $(document).ready(function() {
         burger_name: $("#burgerNew")
           .val()
           .trim()
+          devoured:0
       }
     }).then(function(dataBurger) {
       console.log("successfully added.");
@@ -62,14 +65,18 @@ $(document).ready(function() {
     console.log("Hello");
     e.preventDefault();
     var id = $(this).data("id");
+    // var devouredState = {
+    //   devoured: 1
+    // }
 
     //ajax to onclick mysql url should be from controller
     $.ajax({
       method: "PUT",
       url: "/api/burgers/" + id,
-      data: { devoured: true }
+      data: { devoured: 1 }
     }).then(function(dataBurger) {
-      $("#burger").push("#beenDevoured");
+      // //push
+      // $("#burger").push("#beenDevoured");
       console.log("successfully moved.");
       location.reload();
     });
@@ -83,7 +90,7 @@ $(document).ready(function() {
 
     $.ajax({
       method: "DELETE",
-      url: "/burgers/" + burger_id
+      url: "/api/burgers/" + id
     }).then(function(data) {
       console.log("deleted");
       // reload page to display devoured burger in proper column
