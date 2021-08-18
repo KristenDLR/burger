@@ -1,7 +1,8 @@
 /* card */
 @import url('https://fonts.googleapis.com/css?family=Abel');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');
 
-html, body {
+html, body h2, ul {
   /* background: #FCEEB5; */
   font-family: Abel, Arial, Verdana, sans-serif;
 }
@@ -200,9 +201,23 @@ body {
   background-color: #ffccd3 !important;
 }
 
+#burgersAdded ul {
+  background: #3399ff;
+  padding: 20px;
+  margin-right: 20px;
+
+}
+
+#burgersAdded ul li {
+  background: #cce5ff;
+  margin: 5px;
+  list-style-type: none;
+}
+
 #beenDevoured{
   padding: 10px;
   border-color:#32c704;
+  background-color: #c6ebbb;
   border-style: solid;
   border-width: 5px;
 
@@ -316,6 +331,42 @@ body {
  margin: 20px;
  border-color:rgb(21, 116, 21);
 } */
+h2{
+
+}
+button {
+  display: inline-block;
+  border: none;
+  padding: .5rem 2rem;
+  margin: 0;
+  align-items: flex;
+  text-decoration: none;
+  background: #0069ed;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out,
+              transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+  background: #0053ba;
+}
+
+button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
 .addburger{
   margin:50px;
 }
@@ -483,13 +534,13 @@ a {
   transform: rotate(-15deg); /* Standard syntax */
 }
 
-#titleBurger a:hover {
+/* #titleBurger a:hover {
   color: #FF1177;
   -webkit-animation: none;
   -moz-animation: none;
   animation: none;
   font-family: 'Monoton', cursive;
-}
+} */
 
 #titleBurger a {
   color: #FF1177;
@@ -501,15 +552,15 @@ a {
   z-index:2;
   position: absolute;
   top:30%;
-  right:0;
+  /* right:0; */
 
 }
 
-#titleBurger a:hover {
+/* #titleBurger a:hover {
   -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
   -moz-animation: neon2 1.5s ease-in-out infinite alternate;
   animation: neon2 1.5s ease-in-out infinite alternate;
-}
+} */
 
 #titleYum a {
   color: #FFDD1B;
@@ -522,11 +573,11 @@ a {
 
 }
 
-#titleBurger a:hover {
+/* #titleBurger a:hover {
   -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
   -moz-animation: neon3 1.5s ease-in-out infinite alternate;
   animation: neon3 1.5s ease-in-out infinite alternate;
-}
+} */
 
 
 
@@ -604,6 +655,11 @@ p a:hover {
   }
   p {
     font-size: 3.5em;
+  }
+}
+@media screen and (max-width: 1080px){
+  #oven{
+    opacity: .5;
   }
 }
 
